@@ -67,14 +67,14 @@ public class ConfigScreen extends Screen {
     GRID.getMainPositioner().alignHorizontalCenter().margin(2);
     GridWidget.Adder GRID_ADDER = GRID.createAdder(1);
     
-    // Все цветные мелки теперь встроены в основной мод
+    // All colored chalks are now built into the main mod
     GRID_ADDER.add(new TextWidget(Text.translatable("gui.chalk.config.addons"), this.textRenderer));
     GRID_ADDER.add(new TextWidget(
         Text.translatable("gui.chalk.config.addons.colorful_addon").formatted(Formatting.GREEN),
         this.textRenderer
     ));
     
-    // Если хотите оставить кнопку-ссылку, исправленный вариант:
+    // If you want to keep the link button, the corrected version is:
      GRID_ADDER.add(ButtonWidget.builder(
          Text.translatable("gui.chalk.config.addons.colorful_addon.hover"),
         ConfirmLinkScreen.opening("https://modrinth.com/mod/chalk", this, true)
