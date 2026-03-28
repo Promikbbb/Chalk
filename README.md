@@ -22,4 +22,4 @@ Hitting the corner of a block creates an arrow pointing in that direction, hitti
 Marks from Glow Chalk can be seen in total darkness, perfect for caving action!  
 
 ## Addons  
-[Chalk: Colorful Addon](https://modrinth.com/mod/chalk-colorful-addon) adds variants of chalk in every color!  
+[Chalk: Colorful Addon] NO MORE COLORFUL ADDITION!
