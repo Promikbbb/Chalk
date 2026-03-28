@@ -63,23 +63,25 @@ public class ConfigScreen extends Screen {
 	}
 
 	private GridWidget createAddons() {
-		GridWidget GRID = new GridWidget();
-		GRID.getMainPositioner().alignHorizontalCenter().margin(2);
-		GridWidget.Adder GRID_ADDER = GRID.createAdder(1);
-		/* If a future addon gets created, add a check for it in the following if statement. */
-		if (!(CompatibilityData.COLORFUL_ADDON)) {
-			GRID_ADDER.add(new TextWidget(Text.translatable("gui.chalk.config.addons"), this.textRenderer));
-			if (!CompatibilityData.COLORFUL_ADDON) {
-				GRID_ADDER.add(ButtonWidget.builder(
-						Text.translatable("gui.chalk.config.addons.colorful_addon"),
-						ConfirmLinkScreen.opening("https://modrinth.com/mod/chalk-colorful-addon",
-								this,
-								true)
-				).build()).setTooltip(Tooltip.of(Text.translatable("gui.chalk.config.addons.colorful_addon.hover")));
-			}
-		}
-		return GRID;
-	}
+    GridWidget GRID = new GridWidget();
+    GRID.getMainPositioner().alignHorizontalCenter().margin(2);
+    GridWidget.Adder GRID_ADDER = GRID.createAdder(1);
+    
+    // Все цветные мелки теперь встроены в основной мод
+    GRID_ADDER.add(new TextWidget(Text.translatable("gui.chalk.config.addons"), this.textRenderer));
+    GRID_ADDER.add(new TextWidget(
+        Text.translatable("gui.chalk.config.addons.colorful_addon").formatted(Formatting.GREEN),
+        this.textRenderer
+    ));
+    
+    // Если хотите оставить кнопку-ссылку, исправленный вариант:
+     GRID_ADDER.add(ButtonWidget.builder(
+         Text.translatable("gui.chalk.config.addons.colorful_addon.hover"),
+        ConfirmLinkScreen.opening("https://modrinth.com/mod/chalk", this, true)
+    ).build());
+    
+    return GRID;
+}
 
 	private GridWidget createFooter() {
 		GridWidget GRID = new GridWidget();

@@ -62,17 +62,10 @@ public class ChalkRegistry {
 		for (Map.Entry<DyeColor, Integer> entry : dyeColors.entrySet()) {
 			DyeColor dyeColor = entry.getKey();
 			int color = entry.getValue();
-			if (dyeColor.equals(DyeColor.WHITE)) {
-				/* backwards compatibility */
-				chalkVariant = new ChalkRegistry.ChalkVariant(dyeColor, color, "");
-				chalkVariant.register();
-				chalkVariants.put(dyeColor, chalkVariant);
-			} else if (CompatibilityData.COLORFUL_ADDON) {
-				/* if colourful addon present */
-				chalkVariant = new ChalkRegistry.ChalkVariant(dyeColor, color, dyeColor + "_");
-				chalkVariant.register();
-				chalkVariants.put(dyeColor, chalkVariant);
-			}
+			String prefix = dyeColor.equals(DyeColor.WHITE) ? "" : dyeColor + "_";
+			chalkVariant = new ChalkRegistry.ChalkVariant(dyeColor, color, prefix);
+			chalkVariant.register();
+			chalkVariants.put(dyeColor, chalkVariant);
 		}
 	}
 
