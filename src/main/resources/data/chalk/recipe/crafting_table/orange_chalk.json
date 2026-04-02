@@ -13,14 +13,6 @@
     }
   ],
   "result": {
-    "id": "chalk:orange_chalk"
-  },
-  "fabric:load_conditions": [
-    {
-      "condition": "fabric:all_mods_loaded",
-      "values": [
-        "chalk-colorful-addon"
-      ]
-    }
-  ]
+    "item": "chalk:orange_chalk"
+  }
 }

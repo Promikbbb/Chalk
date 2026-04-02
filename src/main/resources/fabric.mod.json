@@ -37,7 +37,5 @@
     "fabric-api": "*",
     "fabric-simplelibs": "*"
   },
-  "suggests": {
-    "chalk-colorful-addon": "*"
-  }
+  "suggests": { }
 }
